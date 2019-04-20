@@ -9,10 +9,10 @@
 // libreria CTBot di Stefano Ledda <shurillu@tiscalinet.it>
 // https://github.com/shurillu/CTBot
 //
-// Libreria ArduinoJson (attento: usa versione 5.13.5 non la 6.x)
+// Libreria ArduinoJson  (attento: usa versione 5.13.5 non la 6.x)
 // https://arduinojson.org/
 // Installare con il library manager di Arduino
-//
+// 
 
 #include "CTBot.h"
 
@@ -26,7 +26,7 @@ String token = "";
 void setup() {
   
 	Serial.begin( 115200 );
-	Serial.println( "\nSi parte..." );
+	Serial.println( "\n\nSi parte..." );
 
   // Configuri il client Telegram 
   myBot.setTelegramToken(token);
