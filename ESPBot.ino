@@ -24,15 +24,15 @@ String pass  = "";
 String token = "";
 
 void setup() {
-  
-	Serial.begin( 115200 );
-	Serial.println( "\n\nSi parte..." );
+
+  Serial.begin( 115200 );
+  Serial.println( "\n\nSi parte..." );
 
   // Configuri il client Telegram 
   myBot.setTelegramToken(token);
 
-	// lo connetti alla rete
-	myBot.wifiConnect(ssid, pass);
+  // lo connetti alla rete
+  myBot.wifiConnect(ssid, pass);
 
   // tenti una connessione a Telegram per vedere se tutto è OK.
   // Stai qui finchè non è OK
@@ -49,13 +49,13 @@ void loop() {
     Serial.println("Connesso");
   
     // Il messaggio in formato telegram
-	  TBMessage msg;
+    TBMessage msg;
 
-	  // Leggi i messaggi
-	  if ( myBot.getNewMessage(msg) ) {
-		  
-		  // Se li trovi ne fai l'echo
-		  myBot.sendMessage(msg.sender.id, msg.text);
+    // Leggi i messaggi
+    if ( myBot.getNewMessage(msg) ) {
+      
+      // Se li trovi ne fai l'echo
+      myBot.sendMessage(msg.sender.id, msg.text);
 
       // e li mostri in locale
       Serial.println( msg.text );
@@ -66,7 +66,7 @@ void loop() {
       Serial.println("No msg...");
     }
   }
-	
-	// non essere troppo nervoso...
-	delay(500);
+  
+  // non essere troppo nervoso...
+  delay(500);
 }
